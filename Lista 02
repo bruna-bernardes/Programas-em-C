@@ -1,0 +1,421 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int ex01();
+int ex02();
+int ex03();
+int ex04();
+int ex05();
+int ex06();
+int ex07();
+int ex08();
+int ex09();
+int ex10();
+
+int main() {
+  int op;
+  printf("escolha\n");
+  printf("1 - exercicio 01\n");
+  printf("2 - exercicio 02\n");
+  printf("3 - exercicio 03\n");
+  printf("4 - exercicio 04\n");
+  printf("5 - exercicio 05\n");
+  printf("6 - exercicio 06\n");
+  printf("7 - exercicio 07\n");
+  printf("8 - exercicio 08\n");
+  printf("9 - exercicio 09\n");
+  printf("10 - exercicio 10\n");
+
+  scanf("%i", &op);
+  switch (op) {
+  case 1:
+    ex01();
+    break;
+  case 2:
+    ex02();
+    break;
+  case 3:
+    ex03();
+    break;
+  case 4:
+    ex04();
+    break;
+  case 5:
+    ex05();
+    break;
+  case 6:
+    ex06();
+    break;
+  case 7:
+    ex07();
+    break;
+  case 8:
+    ex08();
+    break;
+  case 9:
+    ex09();
+    break;
+  case 10:
+    ex10();
+    break;
+  default:
+    printf("Opcao nao existe!");
+    break;
+  }
+
+  return 0;
+} //
+
+int ex01() {
+  /*1. Fazer um algoritmo que leia um numero inteiro e mostre uma mensagem
+indicando se este numero é par ou impar. Entrada  Saída 12       par 13 impar
+*/
+  int a, b, par, impar;
+  printf("Digite um número: ");
+  scanf("%d", &a);
+  if (a % 2 == 0) {
+    printf("par");
+  } else {
+    printf("impar");
+  }
+  return 0;
+}
+
+int ex02() {
+  /*2. Fazer um algoritmo peça o nome e as 3 notas de um aluno e mostre, além do
+  nome e do valor da media do aluno, uma mensagem de "Aprovado", caso a media
+  seja igual ou superior a 6, ou a mensagem "reprovado", caso contrario.
+
+  Entrada     Saída
+  nome:João
+  12,7,8      media:9   Aprovado João
+  2,4,1       media:2   Reprovado João
+
+  */
+  char nome[40];
+  int nota1, nota2, nota3, media;
+
+  printf("Digite o nome do aluno: \n");
+  scanf("%s", &nome);
+  printf("Digite a primeira nota: \n");
+  scanf("%d", &nota1);
+  printf("Digite a segunda nota: \n");
+  scanf("%d", &nota2);
+  printf("Digite a terceira nota: \n");
+  scanf("%d", &nota3);
+  media = (nota1 + nota2 + nota3) / 3;
+  printf("media=%d\n", media);
+
+  if (media > 7) {
+
+    printf("APROVADO %s", nome);
+  } else {
+
+    printf("REPROVADO %s", nome);
+  }
+
+  return 0;
+}
+
+int ex03() {
+  /*3. Fazer um algoritmo que leia a temperatura da água e mostre se está no
+  estado solido, líquido ou gasoso.
+
+  Entrada   Saída
+  -5        Sólido
+  50        Líquido
+  120       Gasoso
+  */
+  int t;
+  printf("Digite a temperatura da agua: ");
+  scanf("%d", &t);
+
+  if (t < 0) {
+    printf("Solido");
+  }
+  if (t > 0 && t < 100) {
+    printf("Liquido");
+  }
+  if (t >= 100) {
+    printf("Gasoso");
+  }
+  return 0;
+}
+
+int ex04() {
+  /* 4. Leia um valor X e se ele for menor que 0 avalie Y = x2 + 4. Se ele for
+  maior que 0 avalie x3 -3 e se ele for igual a 0 de uma mensagem de erro.
+
+  Entrada    Saída
+     3          24
+    -5          29
+
+  */
+  float x, menorZero, maiorZero, igualZero;
+  printf("Digite um valor para x: ");
+  scanf("%f", &x);
+
+  if (x < 0) {
+    menorZero = pow(x, 2) + 4;
+    printf("total: %f", menorZero);
+  }
+  if (x > 0) {
+    maiorZero = pow(x, 3) - 3;
+    printf("total: %f", maiorZero);
+  }
+  if (x == 0) {
+    printf("Erro");
+  }
+
+  return 0;
+}
+
+int ex05() {
+  /*5. Construa um algoritmo que receba como entrada três valores (A,B e C).
+Após o processamento o menor valor deverá estar em A e o maior valor em C, e o
+valor intermediário em B. Imprima A,B e C.
+
+Entrada   Saída
+ 6,4,7    a:4, b:6, c:7
+ 7,4,6    a:4, b:6, c:7
+ 4,6,7    a:4, b:6, c:7
+  */
+  int a, b, c, menorvalor, maiorvalor, intermediario;
+  printf("Digite um valor para a: ");
+  scanf("%d", &a);
+  printf("Digite um valor para b: ");
+  scanf("%d", &b);
+  printf("Digite um valor para c: ");
+  scanf("%d", &c);
+
+  if (a > b) {
+    maiorvalor = a;
+    menorvalor = b;
+  } else {
+    maiorvalor = b;
+    menorvalor = a;
+  }
+  if (c > maiorvalor) {
+    intermediario = maiorvalor;
+    maiorvalor = c;
+  } else {
+    if (c < menorvalor) {
+      intermediario = menorvalor;
+      menorvalor = c;
+    } else {
+      intermediario = c;
+    }
+  }
+  a = menorvalor;
+  b = intermediario;
+  c = maiorvalor;
+  printf("O valor d A e: %d.\n O valor e B e: %d.\n O valor de c e: %d.", a, b,
+         c);
+  return 0;
+}
+
+int ex06() {
+  /*6. Desenvolver um algoritmo que leia três números inteiros: X, Y, Z  e
+verifique se o número X é divisível por Y e por Z. O algoritmo deverá mostrar as
+possíveis mensagens:
+- o número é divisível por Y e Z.
+- o número é divisível por Y mas não por Z.
+- o número é divisível por Z mas não por Y.
+- o número não é divisível nem Y nem por Z.
+
+  Entrada            Saída
+  x:10, y:5, z:2     x é divisível por y e z
+  x:10, y:5, z:3     x é divisível por y mas não por z
+  x:10, y:3, z:5     x é divisível por z mas não por y
+  x:10, y:3, z:7     x não é divisível por y nem por z
+
+
+  */
+  int x, y, z;
+  printf("Digite o valor de x: ");
+  scanf("%d", &x);
+  printf("Digite o valor de y: ");
+  scanf("%d", &y);
+  printf("Digite o valor de y: ");
+  scanf("%d", &z);
+
+  if (x % y == 0 && x % z == 0) {
+    printf("x e divisivel por y e z.");
+  }
+  if (x % y == 0 && x % z != 0) {
+    printf("x e divisivel por y mas nao por z.");
+  }
+  if (x % z == 0 && x % y != 0) {
+    printf("x e divisivel por z mas nao por y.");
+  }
+  if (x % y != 0 && x % z != 0) {
+    printf("x nao e divisivel por y nem por z.");
+  }
+  return 0;
+}
+
+int ex07() {
+  /*7. O numero 3025 possui a seguinte característica:
+  30 + 25 = 55
+  55^2 = 3025
+  Fazer um algoritmo que dado um numero de 4 dígitos (verifique se o número
+  pertence a faixa) calcule e escreva se ele possui ou não esta característica.
+  Entrada   Saída
+  2025      Possui essa caracteristica
+  3015      Não possui essa caracteristica
+  */
+  int numero, n1, n2, n3, n4, aux, p1, p2, soma, resultado;
+  float calculo;
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+
+  n1 = numero / 1000;
+  aux = numero % 1000;
+  n2 = aux / 100;
+  aux = aux % 100;
+  n3 = aux / 10;
+  n4 = aux % 10;
+
+  p1 = (n1 * 10) + n2;
+  p2 = (n3 * 10) + n4;
+  soma = p1 + p2;
+  calculo = pow(soma, 2);
+  resultado = calculo;
+
+  if (resultado == numero) {
+    printf("Possui essa caracteristica");
+  } else {
+    printf("Nao possui essa caracteristica");
+  }
+  return 0;
+}
+
+int ex08() {
+  /* 8. - ler um código do teclado e mostrar o nome correspondente, de acordo
+  com a lista : 221 Bernardo 211 Eustáquio 311 Luiz 312 Mário 332 Artur
+
+  Entrada     Saída
+  221         Bernardo
+  311         Luiz
+  211         Eustaquio
+  312         Mario
+  332         Artur
+  114         Erro
+  */
+  int codigo;
+  printf("Digite o codigo: ");
+  scanf("%d", &codigo);
+
+  switch (codigo) {
+  case 221:
+    printf("Bernardo");
+    break;
+
+  case 311:
+    printf("Luiz");
+    break;
+
+  case 211:
+    printf("Eustaquio");
+    break;
+
+  case 312:
+    printf("Mario");
+    break;
+
+  case 332:
+    printf("Artur");
+    break;
+
+  default:
+    printf("Erro");
+  }
+  return 0;
+}
+int ex09() {
+  /* 9. Números palíndromos são aqueles que escritos da direita para esquerda ou
+  da esquerda para direita tem o mesmo valor. Exemplo:929, 44, 97379. 85258
+  Fazer um algoritmo que dado um numero de 5 dígitos; calcule e escreva se este
+  é ou não palíndromo.
+
+  Entrada   Saída
+  85258     O número é palíndromo.
+  45629     O número não é palíndromo.
+  */
+  int n1, n2, n3, n4, n5, numero, aux, inverter;
+
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+  n1 = numero / 10000;
+  aux = numero % 10000;
+  n2 = aux / 1000;
+  aux = aux % 1000;
+  n3 = aux / 100;
+  aux = aux % 100;
+  n4 = aux / 10;
+  n5 = aux % 10;
+
+  inverter = (n5 * 10000) + (n4 * 1000) + (n3 * 100) + (n2 * 10) + n1;
+
+  if (numero == inverter) {
+    printf("O numero e palindromo\n");
+  } else {
+    printf("O numero nao e palindromo\n");
+  }
+  return 0;
+}
+
+int ex10() {
+  /* 10. Desenvolver um algoritmo para calcular a conta de água para a SANEAGO.
+  O custo da água varia dependendo do tipo do consumidor - residencial,
+  comercial ou industrial. A regra para calcular a conta e: • Residencial: R$
+  75,00 de taxa mais R$ 3,50 por m3 gastos; • Comercial: R$ 500,00 para os
+  primeiros 80 m3 gastos mais R$ 5,50 por m3 gastos acima dos 80 m3; •
+  Industrial: R$ 800,00 para os primeiros 100 m3 gastos mas R$ 8,00 por m3
+  gastos acima dos 100 m3; O algoritmo devera ler a conta do cliente,  seu tipo
+  (residencial, comercial e industrial) e o seu consumo de água em metros cubos.
+  Como resultado imprimir o valor a ser pago pelo mesmo.
+
+  Entrada   Saída
+  2, 10           A conta do seu comercio e:  R$ 500
+  1, 20           A conta da sua residencia e:R$ 145.00
+  3, 1000         A conta da sua industria e:R$ 8000.00
+
+  */
+  int tipo;
+  float metros, taxa;
+
+  printf("Tipo de conta.\nDigite 1 para Residencial.\nDigite 2 para "
+         "Comercial.\nDigite 3 para Industrial.\n");
+  scanf("%i", &tipo);
+  printf("Digite o seu consumo de agua em metros cubicos:");
+  scanf("%f", &metros);
+
+  if (tipo == 1) {
+    taxa = 75 + (metros * 3.50);
+    printf("A conta da sua residencia e:R$ %.2f", taxa);
+  } else {
+    if (tipo == 2) {
+      if (metros > 80) {
+        taxa = 500 + ((metros - 80) * 5.50);
+        printf("A conta do seu comercio e:R$ %.2f", taxa);
+      } else {
+        printf("A conta do seu comercio e:  R$ 500");
+      }
+    } else {
+      if (tipo == 3) {
+        if (metros > 100) {
+          taxa = 800 + ((metros - 100) * 8);
+          printf("A conta da sua industria e:R$ %.2f", taxa);
+        } else {
+          printf("A conta da sua industria e:  R$ 800");
+        }
+      } else {
+        printf("VALOR INVALIDO!!!");
+      }
+    }
+  }
+
+  return 0;
+}
