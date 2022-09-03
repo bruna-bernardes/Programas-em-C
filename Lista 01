@@ -1,0 +1,564 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int ex04a();
+int ex04b();
+int ex04c();
+int ex04d();
+int ex04e();
+int ex04f();
+int ex04g();
+int ex04h();
+int ex04i();
+int ex04j();
+
+int ex05_01();
+int ex05_02();
+int ex05_03();
+int ex05_04();
+int ex05_05();
+int ex05_06();
+int ex05_07();
+int ex05_08();
+int ex05_09();
+int ex05_10();
+int ex05_11();
+int ex05_12();
+int ex05_13();
+int ex05_14();
+int ex05_15();
+
+int main() {
+  ex04a();
+  ex04b();
+  ex04c();
+  ex04d();
+  ex04e();
+  ex04f();
+  ex04g();
+  ex04h();
+  ex04i();
+  ex04j();
+  
+  ex05_01();
+  ex05_02();
+  ex05_03();
+  ex05_04();
+  ex05_05();
+  ex05_06();
+  ex05_07();
+  ex05_08();
+  ex05_09();
+  ex05_10();
+  ex05_11();
+  ex05_12();
+  ex05_13();
+  ex05_14();
+  ex05_15();
+  return 0;
+}
+
+int ex04a() {
+
+  /*Exercício 04 a-Leia um número e imprima seu sucessor.
+Entrada  Saída
+10        11
+*/
+  int a;
+  printf("Digite um número: ");
+  scanf("%d", &a);
+  a = a + 1;
+  printf("o próximo valor é %d\n\n", a);
+
+  return 0;
+
+}
+
+int ex04b() {
+  
+  /*Exercício 04 b-Calcule a média aritmética de quatro números inteiros dados.
+Entrada  Saída
+2,5,2,3   4
+*/
+  int a, b, c, d, média;
+  printf("Digite o primeiro número: ");
+  scanf("%d", &a);
+  printf("Digite o segundo número: ");
+  scanf("%d", &b);
+  printf("Digite o terceiro número: ");
+  scanf("%d", &c);
+  printf("Digite o quarto número: ");
+  scanf("%d", &d);
+  média = (a + b + c + d) / 4;
+  printf("média=%d\n", média);
+  
+  return 0;
+}
+
+int ex04c() {
+  
+  /*Exercício 04 c-Faça um algoritmo que receba 3 (três) notas e seus respectivos pesos, calcule e mostre a média ponderada dessas notas.
+Entrada      Saída
+nota:1,3,4   3.00
+peso:1,1,2
+*/
+  
+  float n1, n2, n3;
+  int p1, p2, p3, mediaponderada;
+  printf("Digite a primeira nota: ");
+  scanf("%f", &n1);
+  printf("\nDigite o peso da primeira nota: ");
+  scanf("%d", &p1);
+  printf("Digite a segunda nota: ");
+  scanf("%f", &n2);
+  printf("\nDigite o peso da segunda nota: ");
+  scanf("%d", &p2);
+  printf("Digite a terceira nota: ");
+  scanf("%f", &n3);
+  printf("\nDigite o peso da terceira nota: ");
+  scanf("%d", &p3);
+  mediaponderada = (n1 * p1 + n2 * p2 + n3 * p3) / (p1 + p2 + p3);
+  printf("A média ponderada é%.2f\n",
+  (n1 * p1 + n2 * p2 + n3 * p3) / (p1 + p2 + p3));
+
+  return 0;
+}
+
+int ex04d() {
+  
+  /*Exercício 04 d-Leia uma temperatura dada na escala Celsius C e imprima o equivalente em Fahrenheit F
+Entrada  Saída
+35        62
+*/
+  int C, F;
+  printf("Digite uma temperatura em celsius:");
+  scanf("%d", &C);
+  F = (9 / 5 * 30 + 32);
+  printf("F=%d\n", F);
+
+  return 0;
+}
+
+int ex04e() {
+  
+  /*Exercício 04 e-Faça um algoritmo que receba o salário de um funcionário e o percentual de
+aumento, calcule e mostre o novo salário 
+Entrada  Saída
+100       110
+*/
+
+  int SI, SF;
+  float P;
+  printf("Digite o salário inicial: ");
+  scanf("%d", &SI);
+  printf("Digite o percentual de aumento: ");
+  scanf("%f", &P);
+  P = (P / 100);
+  SF = SI + (P * SI);
+  printf("Salário final é: %d\n", SF);
+
+  return 0;
+}
+
+int ex04f() {
+  
+  /*Exercício 04 f-Faça um algoritmo que peça ao usuário a base e a altura e calcule a área de um triangulo. 
+Entrada   Saída
+base:5     10
+altura:4
+*/
+  
+int b,a,A;
+ 
+  printf("Digite a base: ");
+  scanf("%d",&b);
+  printf("Digite a altura: ");
+  scanf("%d",&a);
+  A=b*a/2;
+  printf("A área de um triângulo é: %d\n",A);
+
+  return 0;
+  }
+
+int ex04g() {
+  
+ /*Exercício 04 g-Pedro comprou um saco de Ração com peso em quilos. Pedro possui 2 (dois) gatos para os quais fornece a quantidade de ração em gramas. Faça um algoritmo que receba o peso do Saco de ração e a quantidade de ração fornecida para cada gato. Calcule e mostre quanto restará de ração no saco após 5 (cinco) dias.
+Entrada             Saída
+2000Kg,500g,500g    1995Kg
+*/
+  
+float pesoKG, gato1, gato2, racaogramas, quantidaderacao, resto;
+ 
+ printf("Digite o peso do saco de ração: ");
+ scanf("%f",&pesoKG);
+ printf("Quanto o primeiro gato come por dia: ");
+ scanf("%f",&gato1);
+ printf("Quanto o segundo gato come por dia: ");
+ scanf("%f",&gato2);
+ racaogramas = (pesoKG*1000);
+ quantidaderacao = (gato1 + gato2)*5;
+ resto = (racaogramas - quantidaderacao)/1000;
+ printf("Após cinco dias restará: %.3f KG de ração\n", resto); 
+  
+return 0;
+}
+
+
+int ex04h() {
+  
+/*Exercício 04 h-Ler dois números inteiros para variáveis a e b. Trocar o valor de b com o de a, e imprimi-los.
+Entrada  Saída
+a:4       a:7
+b:7       b:4
+*/
+
+int a,b,c;
+printf("Digite o valor de a: ");
+scanf("%d",&a);
+printf("Digite o valor de b: ");
+scanf("%d",&b); 
+c=a;
+a=b;
+b=c;
+printf("O valor de a é: %d\n",a);
+printf("O valor de b é: %d\n",b);
+
+return 0;
+}
+
+int ex04i() {
+
+  /*Exercício 04 i-Leia um número e imprima o resto da divisão por 7. Utilize o comando resto (a,b) na linguagem C (a % b).
+Entrada  Saída
+a:30     Resultado:4
+b:7      Resto:2
+*/
+  
+  int a,b,resto,resposta;
+  printf("Digite um número que é o dividendo: \n");
+  scanf("%d",&a);
+  printf("Digite outro número que é o divisor: \n");
+  scanf ("%d", &b);
+  resposta =a/b;
+  printf("Resultado da divisão de %d/%d=%d \n", 
+  a,b,resposta);
+  printf("Resto da divisão é: %d\n",a % b);
+  
+  return 0;
+}
+
+int ex04j(){
+
+  /* Exercício 04 j-Calcular a soma dos termos de uma P.A. lendo os valores do primeiro termo, do segundo termo e do número de termos.Sn=n*(a1+an)/2, onde Sn é a soma dos termos, a1 o primeiro termo e an o último termo. O n-ésimo termo de uma progressão aritmética,  pode ser obtido por meio da formula: an=a1+(n-1).r, onde r é a razão da P.A.
+Entrada  Saída
+5,3,2     8.00
+*/
+
+int a1,a2,n,an;
+float r, soma;
+  
+  printf("\nDigite o primeiro termo da PA:");
+  scanf("%d", &a1);
+  printf("\nDigite o segundo termo da PA:");
+  scanf("%d", &a2);
+  printf("\nDigite o número de termos da PA:");
+  scanf("%d", &n);
+
+  r=a2-a1;
+  an=(a1+((n-1)*r));
+  soma=((n*(a1+an))/2.0);
+
+  printf("\nA soma dos termos dessa PA = %0.2f\n", soma);
+  
+  return 0;
+}
+
+int ex05_01(){
+  
+  /*Exercício 05_01-Ler um valor inteiro do teclado e dizer se é par.
+Entrada  Saída
+8        1=verdadeiro
+7        0=falso
+*/
+
+  int a,par;
+  printf("Digite um número inteiro: ");
+  scanf("%d",&a);
+  par=(a % 2 == 0);
+  printf("%d\n",par);
+  
+  return 0;
+}
+
+int ex05_02(){
+
+/* Exercício 05_02- Ler um valor inteiro do teclado e dizer se é ímpar.
+Entrada  Saída
+3        1=verdadeiro
+6        0=falso
+*/
+
+int b,ímpar;
+  printf("Digite um número inteiro: ");
+  scanf("%d",&b);
+  ímpar=(b % 2 != 0);
+  printf("%d\n",ímpar);
+ 
+  return 0;
+}
+
+int ex05_03(){
+
+  /* Exercício 05_03-Ler um valor inteiro do teclado e dizer se é ímpar e maior que 100.
+Entrada  Saída
+203      1=verdadeiro
+7        0=falso
+*/
+
+  int a,ímpar;
+  printf("Digite um número inteiro: ");
+  scanf("%d",&a);
+  ímpar=(a % 2 != 0 && a > 100);
+  printf("%d\n",ímpar);
+  return 0;
+
+  }
+
+int ex05_04(){
+
+  /* Exercício 05_04-Ler um valor inteiro do teclado e dizer se é par e menor que 100, ou ímpar e maior que 100.
+Entrada  Saída
+92,103   1=verdadeiro
+102,93   0=falso 
+*/
+
+  int a,ímparpar;
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  ímparpar=( a % 2 != 0) && (a > 100)||( a % 2 ==  0) && (a < 100);
+  printf("%d\n",ímparpar);
+  printf("\n");
+
+  return 0;
+}
+int ex05_05(){
+
+  /*Exercício 05_05-Ler um valor inteiro do teclado e dizer se pertence ao intervalo aberto entre (25:75).
+Entrada  Saída
+30       1=verdadeiro
+80       0=falso
+*/
+int a,intervalo;
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  intervalo = 25 < a && a < 75;
+  printf("%d",intervalo);
+  printf("\n");
+
+  return 0;
+}
+
+int ex05_06(){
+
+  /*Exercício 05_06-Ler um valor inteiro do teclado e dizer se pertence ao intervalo fechado entre [25:75].
+Entrada  Saída
+25       1=verdadeiro
+76       0=falso
+*/
+int a,intervalo;
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  intervalo = 25 <= a && a <= 75;
+  printf("%d",intervalo);
+  printf("\n");
+  
+  return 0;
+}
+
+int ex05_07(){
+
+  /*Exercício 05_07-Ler um valor inteiro do teclado e dizer se pertence aos intervalos fechados [15:45] ou [66:99]
+Entrada        Saída
+15,45,66,99    1=verdadeiro
+14,46,65,100   0=falso
+*/
+  int a,intervalo1;
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  intervalo1 = 15 <= a && a <= 45 || 66<= 
+  a && a <= 99 ;
+  printf("%d",intervalo1);
+  printf("\n");
+
+  return 0;
+}
+
+int ex05_08(){
+
+  /*Exercício 05_08-Ler dois valores inteiros do teclado e dizer se o primeiro é par e o segundo é ímpar.
+Entrada  Saída
+a:2 b:3  1=verdadeiro
+a:7 b:4  0=falso
+*/
+  int a,b,par,ímpar;
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  par=(a % 2 == 0);
+  printf("%d",par);
+  printf("\nDigite outro valor inteiro: ");
+  scanf("%d",&b);
+  ímpar=(b % 2 != 0);
+  printf("%d\n",ímpar);
+  
+return 0;
+}
+
+int ex05_09(){
+
+  /*Exercício 05_09-Ler dois valores inteiros do teclado e dizer se o primeiro é par e positivo, e o segundo é ímpar e negativo.
+Entrada   Saída
+a:2,-1      1=verdadeiro
+b:-2,1      0=falso
+
+*/
+int a,b,par,ímpar;
+  
+  printf("Digite um valor inteiro: ");
+  scanf("%d",&a);
+  par = (a % 2 == 0 && a > 0);
+  printf("%d",par);
+  
+  printf("\nDigite outro valor inteiro: ");
+  scanf("%d",&b);
+  ímpar = (b % 2 != 0 && b < 0);
+  printf("%d\n",ímpar);
+
+
+  return 0;
+}
+
+int ex05_10(){
+
+  /*Exercício 05_10-Ler dois valores reais do teclado e dizer se o primeiro é maior, menor ou igual ao segundo.
+
+
+Entrada       Saída
+a:8.7 b:6.5   1,0,0
+a:7.6 b:9.6   0,1,0
+a:5.6 b:5.6   0,0,1
+
+*/
+float a,b;
+  printf("Digite um valor real: ");
+  scanf("%f",&a);
+  printf("Digite outro valor real: ");
+  scanf("%f",&b);
+  printf("É maior que o segundo? %d\n",a>b);
+  printf("É menor que o segundo? %d\n",a<b);
+  printf("É igual o segundo? %d\n",a==b);
+  
+return 0;
+  }
+
+int ex05_11(){
+
+  /* Exercício 05_11-Ler três valores reais do teclado e dizer se o primeiro está entre os outros dois
+
+Entrada             Saída
+a:2.1 b:1.1 c:6.1   1=verdadeiro
+a:3.1 b:2.1 c:1.1   0=falso
+*/
+
+  float a,b,c;
+  printf("Digite um valor real: ");
+  scanf("%f",&a);
+ 
+  printf("Digite um valor real: ");
+  scanf("%f",&b);
+  
+  printf("Digite um valor real: ");
+  scanf("%f",&c);
+
+  printf("\n%0.2f está entre %0.2f e %0.2f: %d\n", a,b,c, (a > b && a < c ||  a < b && a > c) );
+  printf("\n");
+
+  return 0;
+}
+
+int ex05_12(){
+
+  /*Exercício 05_12-Ler três valores reais do teclado e dizer se o primeiro não está entre os outros dois.
+
+Entrada              Saída
+a:3.1 b:2.1 c:1.1    1=verdadeiro
+a:2.1 b:1.1 c:6.1    0=falso
+*/
+
+  float a,b,c;
+  printf("Digite um valor real: ");
+  scanf("%f",&a);
+ 
+  printf("Digite um valor real: ");
+  scanf("%f",&b);
+  
+  printf("Digite um valor real: ");
+  scanf("%f",&c);
+
+  printf("\n%0.1f não está entre %0.1f e %0.1f: %d\n", a,b,c, !(a > b && a < c ||a < b && a > c));
+    printf("\n");
+  
+  return 0;
+  }
+
+int ex05_13(){
+/*Exercício 05_13- Ler três valores literais (caracteres) do teclado e dizer se o primeiro está entre os outros dois.
+
+Entrada   Saída
+b,a,c     1=verdadeiro
+v,a,c     0=falso
+*/
+char a,b,c;
+  printf("Digite a primeira letra:  ");
+  scanf(" %c",&a);
+  printf("Digite a segunda letra:  ");
+  scanf(" %c",&b);
+  printf("Digite a terceira letra:  ");
+  scanf(" %c",&c);
+ printf("%d\n", (a < b && a > c|| a < c && a > b));
+  return 0;
+  }
+
+int ex05_14(){
+/*Exercício 05_14-Ler três valores literais (caracteres) do teclado e dizer se estão em ordem crescente lexicograficamente.
+
+Entrada       Saída
+x:a y:b z:c   1=verdadeiro
+x:v y:a z:d   0=falso
+*/
+char x,y,z;
+  printf("Digite a primeira letra:  ");
+  scanf(" %c",&x);
+  printf("Digite a segunda letra:  ");
+  scanf(" %c",&y);
+  printf("Digite a terceira letra:  ");
+  scanf(" %c",&z);
+printf("%d\n",(x < y && y < z));
+
+  return 0;
+}
+
+int ex05_15(){
+/* Exercício 05_14-Ler um valor literal (caractere) do teclado e dizer se é uma letra maiúscula.
+
+Entrada   Saída
+G         1=verdadeiro
+b         0=falso
+*/
+
+  char x;
+  printf("Digite um caracter: ");
+  scanf( " %c",&x);
+  printf( "%d\n",(x >= 'A' && x <= 'Z'));
+
+return 0;
+  }
